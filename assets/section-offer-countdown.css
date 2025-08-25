@@ -1,0 +1,39 @@
+.offer-countdown-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.offer-countdown-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.offer-countdown-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.offer-countdown-content {
+  flex: 1;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.offer-countdown-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.offer-countdown-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.special-offers__timer {
+  font-size: 24px;
+  font-weight: bold;
+}

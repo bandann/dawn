@@ -1,0 +1,62 @@
+{% comment %} Sección personalizada: Productos populares con producto en oferta integrado {% endcomment %}
+{{ 'component-popular-products.css' | asset_url | stylesheet_tag }}
+{{ 'component-special-offers.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'component-special-offers.js' | asset_url }}" defer></script>
+<script defer src="{{ 'component-special-offers.js' | asset_url }}"></script>
+
+<div class="page-width">
+  <section class="popular-products">
+    <h2>Productos Populares</h2>
+    <div class="popular-products__list">
+      {% assign popular_products = collections.all.products | sort: 'price' %}
+      {% for product in popular_products limit: 4 %}
+        <div class="popular-products__item{% if forloop.last and product.compare_at_price > product.price %} popular-products__item--offer{% endif %}">
+          <a
+            href="{{ product.url }}"
+            class="popular-products__item-link"
+            style="position:relative;display:flex;flex-direction:column;align-items:center;"
+          >
+            {% if forloop.first %}
+              <span class="badge badge--new">New</span>
+            {% endif %}
+            {% if forloop.last and product.compare_at_price > product.price %}
+              {% assign discount = product.compare_at_price
+                | minus: product.price
+                | times: 100
+                | divided_by: product.compare_at_price
+                | round
+              %}
+              <span class="badge badge--discount descuento" style="position:absolute;top:12px;right:12px;"
+                >-{{ discount }}%</span
+              >
+            {% endif %}
+            <img
+              src="{{ product.featured_image | image_url: width:300, height:300 }}"
+              alt="{{ product.title }}"
+              width="300"
+              height="300"
+              style="display:block;"
+            >
+            {% if forloop.last and product.compare_at_price > product.price %}
+              <div class="special-offers__timer">
+                <span class="offer-timer popularTimer"></span>
+                <span class="offer-warning" style="display:none;"></span>
+              </div>
+            {% endif %}
+          </a>
+          <h3 style="margin:0.7em 0 0.2em 0;">{{ product.title }}</h3>
+          <span
+            {% if forloop.last and product.compare_at_price > product.price %}
+              style="color:#d7263d;font-weight:bold;font-size:1.1em;"
+            {% endif %}
+          >
+            {{- product.price | money -}}
+          </span>
+          {% if product.compare_at_price > product.price %}
+            <span class="price--old">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+/* Estilos para el contador de oferta especial */
+.special-offers {
+  padding: 3rem 0;
+  background: #fffbe6;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.special-offers__item {
+  text-align: center;
+}
+.special-offers__timer {
+  margin-top: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+.special-offers__warning {
+  display: block;
+  margin-top: 1rem;
+  color: #74000f;
+  font-size: 1.1rem;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}

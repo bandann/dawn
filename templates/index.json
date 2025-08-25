@@ -1,5 +1,11 @@
 {
   "sections": {
+    "popular-products": {
+      "type": "popular-products"
+    },
+    "special-offers": {
+      "type": "special-offers"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -200,6 +206,8 @@
     }
   },
   "order": [
+    "popular-products",
+    "special-offers",
     "image_banner",
     "rich_text",
     "featured_collection",

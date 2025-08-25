@@ -1,0 +1,49 @@
+{% comment %} Sección personalizada: Ofertas especiales {% endcomment %}
+{{ 'component-special-offers.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'component-special-offers.js' | asset_url }}" defer></script>
+<section class="special-offers">
+  <h2>Ofertas Especiales</h2>
+  <div class="special-offers__list">
+    {% assign offer_products = collections.ofertas.products %}
+    {% assign discounted_product = false %}
+    {% for product in offer_products reversed %}
+      {% if product.compare_at_price > product.price %}
+        {% assign discounted_product = product %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if discounted_product %}
+      {% assign discount = discounted_product.compare_at_price
+        | minus: discounted_product.price
+        | times: 100
+        | divided_by: discounted_product.compare_at_price
+        | round
+      %}
+      <div class="special-offers__item" style="position:relative;">
+        <a href="{{ discounted_product.url }}" style="display:block;position:relative;">
+          <img
+            src="{{ discounted_product.featured_image | image_url: width:300, height:300 }}"
+            alt="{{ discounted_product.title }}"
+            width="300"
+            height="300"
+          >
+          <span class="badge badge--discount" style="position:absolute;top:12px;right:12px;">-{{ discount }}%</span>
+          <h3>{{ discounted_product.title }}</h3>
+          <span class="special-offers__price" style="color:#d7263d;font-weight:bold;">
+            {{- discounted_product.price | money -}}
+          </span>
+          <span class="price--old" style="text-decoration:line-through;color:#888;margin-left:0.5em;">
+            {{- discounted_product.compare_at_price | money -}}
+          </span>
+        </a>
+        <div class="special-offers__timer">
+          <span class="offer-timer"></span>
+          <span class="offer-warning" style="display:none;"></span>
+        </div>
+      </div>
+    {% else %}
+      <p>No se encontró ningún producto con descuento en la colección "ofertas".</p>
+    {% endif %}
+  </div>
+</section>

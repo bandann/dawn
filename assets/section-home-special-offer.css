@@ -1,0 +1,141 @@
+.home-special-offer-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+#shopify-section-template--18040580243525__home_special_offer_h9HH7P { 
+  background: #f1f1f1;  
+  }
+.home-special-offer-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.home-special-offer-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.home-special-offer-content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
+  text-align: left;
+  min-width: 220px;
+  max-width: 400px;
+}
+
+.home-special-offer-content h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.home-special-offer-content h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.home-special-offer-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.home-special-offer-price {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #d7263d;
+  font-weight: bold;
+}
+
+.home-special-offer-price .price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d7263d;
+}
+
+.home-special-offer-price .compare-at-price {
+  font-size: 1.1rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+.home-special-offer-badge {
+  background: #d7263d;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 16px;
+  padding: 0.3em 1em;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.special-offers__timer {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+  color: #007b5e;
+  font-weight: bold;
+}
+.popularTimer {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff !important;
+  background: #000000;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+}
+
+.home-special-offer-btn {
+  background: #007b5e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.home-special-offer-btn:hover {
+  background: #005f46;
+}
+
+@media (max-width: 900px) {
+  .home-special-offer-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .home-special-offer-content,
+  .home-special-offer-product {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .home-special-offer-title {
+    font-size: 1.5rem;
+  }
+  .home-special-offer-description {
+    font-size: 1rem;
+  }
+}
+

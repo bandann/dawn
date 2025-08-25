@@ -1,0 +1,159 @@
+/* Estilos personalizados para Productos Populares */
+.popular-products {
+  padding: 5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.popular-products__list {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  justify-content: center;
+}
+.popular-products__item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1rem;
+  text-align: left;
+  transition: box-shadow 0.2s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s ease forwards;
+}
+.popular-products__item:nth-child(1) { animation-delay: 0.1s; }
+.popular-products__item:nth-child(2) { animation-delay: 0.2s; }
+.popular-products__item:nth-child(3) { animation-delay: 0.3s; }
+.popular-products__item:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.popular-products__item:hover {
+  box-shadow: 0 4px 16px rgba(0, 78, 247, 0.12);
+  border: 3px solid #0086bb;
+}
+.popular-products__item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.popular-products__item h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+.popular-products__item span {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.5rem;
+}
+/* --- ESTILOS PARA EL PRODUCTO EN OFERTA (CUARTO) --- */
+.popular-products__item--offer {
+  border: 3px solid #0086bb;
+  box-shadow: 0 4px 16px rgba(215,38,61,0.09);
+}
+.popular-products__item--offer h3 {
+  color: #d7263d;
+}
+.popular-products__item--offer .popular-products__discount-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #d7263d;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 50%;
+  font-size: 1.1em;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(215,38,61,0.12);
+}
+.popular-products__item--offer .popular-products__timer {
+  margin-top: 1em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d7263d;
+  background: #fff0f0;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(215,38,61,0.07);
+  position: relative;
+}
+.popular-products__item--offer .special-offers__warning {
+  display: block;
+  margin-top: 1rem;
+  color: #d7263d;
+  font-size: 1.1rem;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+.popular-products__item--offer span[style*="text-decoration:line-through"] {
+  color: #888;
+  margin-left: 0.5em;
+  font-size: 0.95em;
+}
+.popular-products__item--offer span[style*="color:#d7263d"] {
+  font-size: 1.1em;
+}
+@media (max-width: 768px) {
+  .popular-products__list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Estilos personalizados para el layout combinado */
+.home-featured-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+@media (max-width: 900px) {
+  .home-featured-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.badge--new {
+  background-color: #28a745; /* green */
+}
+
+.badge--discount {
+  background-color: #dc3545; /* red */
+  color:white;
+}
+
+.popular-products__item-link {
+  position: relative;
+  display: flex;
+}
+
+.price--old {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 0.5em;
+}

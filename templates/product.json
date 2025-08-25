@@ -47,7 +47,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "",
+            "content": "<p>This is the content for the Materials tab. You can edit this from the theme editor.</p>",
             "page": ""
           }
         },
@@ -56,7 +56,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
-            "content": "",
+            "content": "<p>This is the content for the Shipping & Returns tab. You can edit this from the theme editor.</p>",
             "page": ""
           }
         },

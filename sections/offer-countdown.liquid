@@ -1,0 +1,27 @@
+{% schema %}
+{
+  "name": "Offer Countdown",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Offer Countdown"
+    }
+  ]
+}
+{% endschema %}
+{{ 'section-offer-countdown.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'component-special-offers.js' | asset_url }}" defer></script>
+
+<div class="offer-countdown-section">
+  <div class="offer-countdown-image">
+    <img src="{{ 'offer-product.jpg' | asset_url }}" alt="Oferta especial">
+  </div>
+  <div class="offer-countdown-content">
+    <h2>¡Oferta por tiempo limitado!</h2>
+    <p>Aprovecha nuestro descuento especial en este producto.</p>
+    <div class="special-offers__timer">
+      <span class="offer-timer"></span>
+      <span class="offer-warning" style="display:none;"></span>
+    </div>
+  </div>
+</div>
