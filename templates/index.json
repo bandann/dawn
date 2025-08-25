@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Bani Inaga",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Shopify - Test",
             "text_style": "body"
           }
         },
@@ -56,6 +56,15 @@
         "show_text_below": false
       }
     },
+    "mailchimp_newsletter_d7Uh7F": {
+      "type": "mailchimp-newsletter",
+      "name": "Newsletter Mailchimp",
+      "settings": {
+        "heading": "Subscribe to our newsletter",
+        "subheading": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "background_color": "#f4f4f4"
+      }
+    },
     "popular-products": {
       "type": "popular-products",
       "settings": {}
@@ -69,15 +78,6 @@
       "type": "home-special-offer",
       "name": "Home Special Offer",
       "settings": {}
-    },
-    "mailchimp_newsletter_d7Uh7F": {
-      "type": "mailchimp-newsletter",
-      "name": "Newsletter Mailchimp",
-      "settings": {
-        "heading": "Subscribe to our newsletter",
-        "subheading": "<p>A short sentence describing what someone will receive by subscribing</p>",
-        "background_color": "#f4f4f4"
-      }
     }
   },
   "order": [
