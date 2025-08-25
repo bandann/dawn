@@ -62,7 +62,7 @@
       "name": "Newsletter Mailchimp",
       "settings": {
         "heading": "Subscribete a nuestro boletin",
-        "subheading": "<p>A short sentence describing what someone will receive by subscribing</p>",
+        "subheading": "<p>Recibe nuestras últimas noticias y promociones especiales.</p>",
         "background_color": "#f4f4f4"
       }
     },
