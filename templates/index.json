@@ -61,7 +61,7 @@
       "type": "mailchimp-newsletter",
       "name": "Newsletter Mailchimp",
       "settings": {
-        "heading": "Subscribe to our newsletter",
+        "heading": "Subscribete a nuestro boletin",
         "subheading": "<p>A short sentence describing what someone will receive by subscribing</p>",
         "background_color": "#f4f4f4"
       }
