@@ -44,11 +44,11 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/hands-typing-on-laptop.jpg",
-        "image_overlay_opacity": 40,
+        "image": "shopify://shop_images/Hero_Image.png",
+        "image_overlay_opacity": 50,
         "image_height": "large",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-3",
