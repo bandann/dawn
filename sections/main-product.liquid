@@ -15,6 +15,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'component-siblings.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -676,6 +677,56 @@
                 {% render 'icon-with-text', block: block %}
             {%- endcase -%}
           {%- endfor -%}
+
+          {%- liquid
+            assign siblings_metaobject = product.metafields.custom.siblings.value
+            assign sibling_products = blank
+            assign sibling_count = 0
+            if siblings_metaobject != blank and siblings_metaobject.products.value != blank
+              assign sibling_products = siblings_metaobject.products.value
+              for sibling_product in sibling_products
+                if sibling_product != blank and sibling_product.id != product.id
+                  assign sibling_count = sibling_count | plus: 1
+                endif
+              endfor
+            endif
+          -%}
+          {%- if sibling_products != blank and sibling_count > 0 -%}
+            <section
+              class="product-siblings"
+              {% if siblings_metaobject.name.value != blank %}
+                aria-label="{{ siblings_metaobject.name.value | escape }}"
+              {% endif %}
+            >
+              {%- if siblings_metaobject.name.value != blank -%}
+                <p class="product-siblings__title h4">{{ siblings_metaobject.name.value | escape }}</p>
+              {%- endif -%}
+              <ul class="product-siblings__list list-unstyled" role="list">
+                {%- for sibling_product in sibling_products -%}
+                  {%- if sibling_product != blank and sibling_product.id != product.id -%}
+                    <li class="product-siblings__item">
+                      <a href="{{ sibling_product.url }}" class="product-siblings__link">
+                        {%- if sibling_product.featured_image != blank -%}
+                          {{
+                            sibling_product.featured_image
+                            | image_url: width: 120
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '60, 80, 120',
+                              sizes: '(min-width: 750px) 4rem, 3.5rem',
+                              class: 'product-siblings__image',
+                              alt: sibling_product.featured_image.alt
+                          }}
+                        {%- endif -%}
+                        <span class="product-siblings__name">{{ sibling_product.title | escape }}</span>
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </section>
+          {%- endif -%}
+
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
